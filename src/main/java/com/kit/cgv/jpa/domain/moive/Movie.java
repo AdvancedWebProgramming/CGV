@@ -33,10 +33,10 @@ public class Movie extends BaseTimeEntity {
     @Column(name = "NAME", nullable = false, length = 200)
     private String name;
 
-    @Column(name = "ADVANCESALERATE")
+    @Column(name = "ADVANCE_SALERATE")
     private Double advanceSaleRate;
 
-    @Column(name = "RELEASEDATE")
+    @Column(name = "RELEASE_DATE")
     private Timestamp releaseDate;
 
     @Lob

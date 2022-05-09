@@ -54,7 +54,7 @@ public class RatingBoard extends BaseTimeEntity {
     private String content;
 
     @ColumnDefault("0")
-    @Column(name = "LIKECOUNT")
+    @Column(name = "LIKE_COUNT")
     private Long likeCount;
 
     @Column(name = "GRADE")
