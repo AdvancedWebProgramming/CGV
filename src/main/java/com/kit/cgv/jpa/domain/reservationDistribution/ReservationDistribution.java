@@ -26,30 +26,30 @@ public class ReservationDistribution extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int advanceCode;
+    private Long advanceCode;
 
     @Column
-    private double man;
+    private Double man;
 
     @OneToOne
     @JoinColumn(name = "movieId")
     private Movie movie;
 
     @Column
-    private double woman;
+    private Double woman;
 
     @Column
-    private double ten;
+    private Double ten;
 
     @Column
-    private double twenty;
+    private Double twenty;
 
     @Column
-    private double thirty;
+    private Double thirty;
 
     @Column
-    private double forty;
+    private Double forty;
 
     @Column
-    private double fifty;
+    private Double fifty;
 }

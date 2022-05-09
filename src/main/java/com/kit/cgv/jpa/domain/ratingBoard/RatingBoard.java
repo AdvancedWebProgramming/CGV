@@ -35,7 +35,7 @@ public class RatingBoard extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @OneToOne
     @JoinColumn(name = "movieId")
@@ -52,8 +52,8 @@ public class RatingBoard extends BaseTimeEntity {
     private String content;
 
     @ColumnDefault("0")
-    private int likeCount;
+    private Long likeCount;
 
     @Column
-    private double grade;
+    private Double grade;
 }

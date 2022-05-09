@@ -26,13 +26,13 @@ public class Movie extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(nullable = false, length = 200)
     private String name;
 
     @Column
-    private double advanceSaleRate;
+    private Double advanceSaleRate;
 
     @Column
     private Timestamp releaseDate;
@@ -56,5 +56,5 @@ public class Movie extends BaseTimeEntity {
     private String description;
 
     @Column
-    private double grade;
+    private Double grade;
 }
