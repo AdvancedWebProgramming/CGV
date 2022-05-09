@@ -11,6 +11,7 @@ import javax.persistence.Lob;
 import javax.persistence.Table;
 
 import com.kit.cgv.jpa.domain.common.BaseTimeEntity;
+import com.kit.cgv.jpa.domain.trailer.Trailer;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -26,35 +27,39 @@ public class Movie extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "MOVIE_ID")
     private Long id;
 
-    @Column(nullable = false, length = 200)
+    @Column(name = "NAME", nullable = false, length = 200)
     private String name;
 
-    @Column
+    @Column(name = "ADVANCESALERATE")
     private Double advanceSaleRate;
 
-    @Column
+    @Column(name = "RELEASEDATE")
     private Timestamp releaseDate;
 
     @Lob
+    @Column(name = "PHOTO")
     private String photo;
 
-    @Column
+    @Column(name = "DIRECTORS")
     private String directors;
 
-    @Column(length = 255)
+    @Column(name = "ACTORS", length = 255)
     private String actors;
 
-    @Column
+    @Column(name = "GENRES")
     private String genres;
 
     @Lob
-    private String trailer;
+    @Column(name = "TRAILER_ID")
+    private Trailer trailer;
 
     @Lob
+    @Column(name = "DESCRIPTION")
     private String description;
 
-    @Column
+    @Column(name = "GRADE")
     private Double grade;
 }
