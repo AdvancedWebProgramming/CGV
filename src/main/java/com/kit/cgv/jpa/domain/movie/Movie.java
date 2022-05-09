@@ -7,6 +7,8 @@ import lombok.Setter;
 
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -28,9 +30,9 @@ public class Movie {
     @Column(name = "RUNTIME")
     private String runtime;
     @Column(name = "OPENING_DATE")
-    private Date openingDate;
+    private LocalDate openingDate;
     @Column(name = "CLOSING_DATE")
-    private Date closingDate;
+    private LocalDate closingDate;
     @Column(name = "WATCHER_COUNT")
     private Long watcherCount;//관람객수
     @Column(name = "ETC")

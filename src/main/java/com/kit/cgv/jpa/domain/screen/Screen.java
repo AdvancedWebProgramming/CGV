@@ -7,6 +7,7 @@ import lombok.Setter;
 
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -20,7 +21,7 @@ public class Screen {
     @Column(name = "SCREEN_ID")
     private Long screenID;//상영id
     @Column(name = "SCREEN_DATE")
-    private Date screenDate;
+    private LocalDate screenDate;
     @Column(name = "MOVIE_ID")
     private Long movieID;
 }

@@ -8,6 +8,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 
@@ -25,9 +27,9 @@ public class Member {
     @Column(name = "MEMBER_PWD")
     private String memberPWD;
     @Column(name = "BIRTHDAY")
-    private Date birthday;
+    private LocalDate birthday;
     @Column(name = "REGISTER_DAY")
-    private Date registerDay;//가입일
+    private LocalDate registerDay;//가입일
     @Column(name = "EMAIL")
     private String email;
     @Column(name = "MANAGEMENT")

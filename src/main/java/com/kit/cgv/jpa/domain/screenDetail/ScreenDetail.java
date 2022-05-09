@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.sql.Time;
+import java.time.LocalTime;
 
 @Entity
 @Getter
@@ -26,7 +27,7 @@ public class ScreenDetail {
 
     private int theaterNum;//상영관번호
     @Column(name= "SCREEN_TIME")
-    private Time screenTime; //상영시간
+    private LocalTime screenTime; //상영시간
     @Column(name = "PEOPLE")
     private Long people;//관람객수
 }
