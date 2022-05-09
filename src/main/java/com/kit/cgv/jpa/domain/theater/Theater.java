@@ -1,4 +1,4 @@
-package com.kit.cgv.pbh.entity;
+package com.kit.cgv.jpa.domain.theater;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,7 +7,6 @@ import lombok.Setter;
 
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Getter
@@ -15,12 +14,12 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Screen {
+public class Theater {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "SCREEN_ID")
-    private Long screenID;//상영id
-    @Column(name = "SCREEN_DATE")
-    private Date screenDate;
-    @Column(name = "MOVIE_ID")
-    private Long movieID;
+    @Column(name = "THEATER_NUM")
+    private Long theaterNum;//상영관번호
+    @Column(name = "ROW")
+    private Long rowMany;//행수
+    @Column(name = "COLUMN")
+    private Long columnMany;//열수
 }

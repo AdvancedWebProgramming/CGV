@@ -1,4 +1,4 @@
-package com.kit.cgv.pbh.entity;
+package com.kit.cgv.jpa.domain.review;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,5 +27,5 @@ public class Review {
     @Column(name = "REVIEW_TITLE")
     private String reviewTitle;//리뷰제목
     @Column(name = "STAR_POINT")
-    private String starpoint;//리뷰점수
+    private Double starpoint;//리뷰점수
 }

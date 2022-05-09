@@ -1,4 +1,4 @@
-package com.kit.cgv.pbh.entity;
+package com.kit.cgv.jpa.domain.movie;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

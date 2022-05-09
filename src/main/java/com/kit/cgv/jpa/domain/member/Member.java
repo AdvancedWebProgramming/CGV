@@ -1,4 +1,4 @@
-package com.kit.cgv.pbh.entity;
+package com.kit.cgv.jpa.domain.member;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

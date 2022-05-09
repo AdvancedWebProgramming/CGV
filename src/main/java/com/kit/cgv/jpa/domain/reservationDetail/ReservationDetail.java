@@ -1,4 +1,4 @@
-package com.kit.cgv.pbh.entity;
+package com.kit.cgv.jpa.domain.reservationDetail;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,7 +21,7 @@ public class ReservationDetail {
     private Long reservationID;
 
     @Column(name = "ROW_NUM")
-    private int rowNum;
+    private Long rowNum;
     @Column(name = "COLUMN_NUM")
-    private int columnNum;
+    private Long columnNum;
 }
