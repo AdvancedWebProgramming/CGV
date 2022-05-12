@@ -1,5 +1,6 @@
 package com.kit.cgv.jpa.domain.screenDetail;
 
+import com.kit.cgv.jpa.domain.common.BaseTimeEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,7 +17,7 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class ScreenDetail {
+public class ScreenDetail extends BaseTimeEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @ManyToOne
     @JoinColumn(name = "SCREEN_ID")

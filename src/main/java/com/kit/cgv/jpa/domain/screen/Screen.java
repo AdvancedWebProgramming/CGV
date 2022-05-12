@@ -1,5 +1,6 @@
 package com.kit.cgv.jpa.domain.screen;
 
+import com.kit.cgv.jpa.domain.common.BaseTimeEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,7 +17,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Screen {
+public class Screen extends BaseTimeEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "SCREEN_ID")
     private Long screenID;//상영id
