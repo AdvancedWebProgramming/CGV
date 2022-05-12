@@ -20,7 +20,7 @@ import java.util.Date;
 
 public class Movie extends BaseTimeEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "MOVIE_ID")
+    @Column(name = "MOVIE_ID", nullable = false)
     private Long movieID;
     @Column(name = "TITLE")
     private String title;
@@ -36,6 +36,25 @@ public class Movie extends BaseTimeEntity {
     private LocalDate closingDate;
     @Column(name = "WATCHER_COUNT")
     private Long watcherCount;//관람객수
-    @Column(name = "ETC")
-    private String etc;//부가설명
+
+    //moive에서 따온것들
+    @Lob
+    @Column(name = "DESCRIPTION")
+    private String description;//부가설명
+    @Lob
+    @Column(name = "PHOTO")
+    private String photo;
+    @Lob
+    @Column(name = "TRAILER")
+    private String trailer;
+    @Column(name = "GRADE")
+    private Double grade;
+    @Column(name = "ADVANCE_SALE_RATE")
+    private Double advanceSaleRate;//뭔지모르겠음
+    @Column(name = "DIRECTORS")
+    private String directors;
+    @Column(name = "ACTORS")//length 디폴트가 255라고 되어있어서 뺌, 확실하지 않음
+    private String actors;
+
+
 }

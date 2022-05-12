@@ -17,6 +17,9 @@ import javax.persistence.*;
 
 public class ReservationDetail extends BaseTimeEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "RESERVATION_DETAIL_ID")
+    private Long reservationDetailID;
+
     @ManyToOne
     @JoinColumn(name = "RESERVATION_ID")
     private Long reservationID;

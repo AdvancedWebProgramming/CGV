@@ -23,10 +23,14 @@ import java.util.Date;
 
 public class Member extends BaseTimeEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "MEMBER_ID")
-    private String memberID;
-    @Column(name = "MEMBER_PWD")
+    @Column(name = "MEMBER_ID", nullable = false)
+    private Long memberID;
+    @Column(name = "MEMBER_StringID", nullable = false)
+    private String memberStringID;
+    @Column(name = "MEMBER_PWD", nullable = false)
     private String memberPWD;
+    @Column(name ="NICKNAME", nullable = false)
+    private String nickname;
     @Column(name = "BIRTHDAY")
     private LocalDate birthday;
     @Column(name = "REGISTER_DAY")
