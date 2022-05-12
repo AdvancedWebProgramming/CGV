@@ -17,10 +17,10 @@ import javax.persistence.*;
 
 public class Theater extends BaseTimeEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "THEATER_NUM")
+    @Column(name = "THEATER_NUM", nullable = false)
     private Long theaterNum;//상영관번호
-    @Column(name = "ROW")
+    @Column(name = "ROW", nullable = false)
     private Long rowMany;//행수
-    @Column(name = "COLUMN")
+    @Column(name = "COLUMN", nullable = false)
     private Long columnMany;//열수
 }

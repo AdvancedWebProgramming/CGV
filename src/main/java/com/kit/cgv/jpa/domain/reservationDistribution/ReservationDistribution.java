@@ -10,7 +10,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.kit.cgv.jpa.domain.common.BaseTimeEntity;
-import com.kit.cgv.jpa.domain.moive.Movie;
+
+import com.kit.cgv.jpa.domain.movie.Movie;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

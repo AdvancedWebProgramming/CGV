@@ -17,16 +17,16 @@ import javax.persistence.*;
 
 public class Review extends BaseTimeEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "REVIEW_ID")
+    @Column(name = "REVIEW_ID", nullable = false)
     private Long reviewID;
-    @Column(name = "MEMBER_ID")
+    @Column(name = "MEMBER_ID", nullable = false)
     private String memberID;
-    @Column(name = "RESERVATION_ID")
+    @Column(name = "RESERVATION_ID", nullable = false)
     private Long reservationID;
-    @Column(name = "REVIEW_CONTENT")
+    @Column(name = "REVIEW_CONTENT", nullable = false)
     private String reviewContent;//리뷰내용
-    @Column(name = "REVIEW_TITLE")
+    @Column(name = "REVIEW_TITLE", nullable = false)
     private String reviewTitle;//리뷰제목
-    @Column(name = "STAR_POINT")
+    @Column(name = "STAR_POINT", nullable = false)
     private Double starpoint;//리뷰점수
 }

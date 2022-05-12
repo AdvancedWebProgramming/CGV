@@ -1,6 +1,7 @@
 package com.kit.cgv.jpa.domain.movie;
 
 import com.kit.cgv.jpa.domain.common.BaseTimeEntity;
+import com.kit.cgv.jpa.domain.trailer.Trailer;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,7 +23,7 @@ public class Movie extends BaseTimeEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "MOVIE_ID", nullable = false)
     private Long movieID;
-    @Column(name = "TITLE")
+    @Column(name = "TITLE", nullable = false)
     private String title;
     @Column(name = "RATE")
     private String rate;//상영등급
@@ -46,7 +47,7 @@ public class Movie extends BaseTimeEntity {
     private String photo;
     @Lob
     @Column(name = "TRAILER")
-    private String trailer;
+    private Trailer trailer;
     @Column(name = "GRADE")
     private Double grade;
     @Column(name = "ADVANCE_SALE_RATE")

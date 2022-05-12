@@ -15,8 +15,10 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.kit.cgv.jpa.domain.common.BaseTimeEntity;
-import com.kit.cgv.jpa.domain.moive.Movie;
-import com.kit.cgv.jpa.domain.user.User;
+import com.kit.cgv.jpa.domain.member.Member;
+
+import com.kit.cgv.jpa.domain.movie.Movie;
+
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -42,8 +44,8 @@ public class RatingBoard extends BaseTimeEntity {
     private Movie movie;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "userId")
-    private User user;
+    @JoinColumn(name = "MEMBER_ID")
+    private Member user;
 
     @Column
     private String title;

@@ -19,10 +19,10 @@ import java.util.Date;
 
 public class Screen extends BaseTimeEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "SCREEN_ID")
+    @Column(name = "SCREEN_ID", nullable = false)
     private Long screenID;//상영id
-    @Column(name = "SCREEN_DATE")
+    @Column(name = "SCREEN_DATE", nullable = false)
     private LocalDate screenDate;
-    @Column(name = "MOVIE_ID")
+    @Column(name = "MOVIE_ID", nullable = false)
     private Long movieID;
 }

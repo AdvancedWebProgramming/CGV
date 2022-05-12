@@ -17,23 +17,23 @@ import javax.persistence.*;
 
 public class Reservation extends BaseTimeEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "RESERVATION_ID")
+    @Column(name = "RESERVATION_ID", nullable = false)
     private Long reservationID;// 예매번호
 
     @ManyToOne
-    @JoinColumn(name = "SCREEN_ID")
+    @JoinColumn(name = "SCREEN_ID", nullable = false)
     private Long screenID; // 상영번호
 
     @ManyToOne
-    @JoinColumn(name = "MEMBER_ID")
+    @JoinColumn(name = "MEMBER_ID", nullable = false)
     private String memberID;
 
-    @Column(name = "COUNT")
+    @Column(name = "COUNT", nullable = false)
     private Long count;//인원수
-    @Column(name = "SCREEN_NUM")
+    @Column(name = "SCREEN_NUM", nullable = false)
     private Long screenNum;//상영회차(영화 몇번째(시작시간, 끝시간 순서))
     @Column(name = "EMAIL")
     private String email;
-    @Column(name = "PRICE")
+    @Column(name = "PRICE", nullable = false)
     private Long price;
 }
