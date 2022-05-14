@@ -1,6 +1,7 @@
 package com.kit.cgv.jpa.domain.screen;
 
 import com.kit.cgv.jpa.domain.common.BaseTimeEntity;
+import com.kit.cgv.jpa.domain.movie.Movie;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,6 +24,8 @@ public class Screen extends BaseTimeEntity {
     private Long screenID;//상영id
     @Column(name = "SCREEN_DATE", nullable = false)
     private LocalDate screenDate;
-    @Column(name = "MOVIE_ID", nullable = false)
-    private Long movieID;
+
+    @JoinColumn(name="MOVIE_ID", nullable = false)
+    @ManyToOne
+    private Movie movie;
 }

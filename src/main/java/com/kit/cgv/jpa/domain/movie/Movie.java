@@ -1,6 +1,7 @@
 package com.kit.cgv.jpa.domain.movie;
 
 import com.kit.cgv.jpa.domain.common.BaseTimeEntity;
+import com.kit.cgv.jpa.domain.movieposter.MoviePoster;
 import com.kit.cgv.jpa.domain.trailer.Trailer;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,6 +13,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Getter
@@ -38,22 +40,23 @@ public class Movie extends BaseTimeEntity {
     @Column(name = "WATCHER_COUNT")
     private Long watcherCount;//관람객수
 
-    //moive에서 따온것들
+    @Column(name = "EVALUATION_RATE")
+    private Double evaluationRate;
+
     @Lob
     @Column(name = "DESCRIPTION")
     private String description;//부가설명
-    @Lob
-    @Column(name = "PHOTO")
-    private String photo;
-    @Lob
-    @Column(name = "TRAILER")
-    private Trailer trailer;
-    @Column(name = "GRADE")
-    private Double grade;
-    @Column(name = "ADVANCE_SALE_RATE")
-    private Double advanceSaleRate;//뭔지모르겠음
+
+    @OneToOne
+    @JoinColumn(name = "MOVIE_POSTER_ID")
+    private MoviePoster moviePoster;
+
+    @Column(name = "SALE_RATE")
+    private Double saleRate;//예매율
+
     @Column(name = "DIRECTORS")
     private String directors;
+
     @Column(name = "ACTORS")//length 디폴트가 255라고 되어있어서 뺌, 확실하지 않음
     private String actors;
 

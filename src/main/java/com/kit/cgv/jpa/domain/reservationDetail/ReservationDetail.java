@@ -1,6 +1,8 @@
 package com.kit.cgv.jpa.domain.reservationDetail;
 
 import com.kit.cgv.jpa.domain.common.BaseTimeEntity;
+import com.kit.cgv.jpa.domain.reservation.Reservation;
+import com.kit.cgv.jpa.domain.seat.Seat;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,6 +10,7 @@ import lombok.Setter;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -22,10 +25,9 @@ public class ReservationDetail extends BaseTimeEntity {
 
     @ManyToOne
     @JoinColumn(name = "RESERVATION_ID", nullable = false)
-    private Long reservationID;
+    private Reservation reservationID;
 
-    @Column(name = "ROW_NUM", nullable = false)
-    private Long rowNum;
-    @Column(name = "COLUMN_NUM", nullable = false)
-    private Long columnNum;
+    @OneToOne
+    @JoinColumn(name="SEAT_ID")
+    private Seat seat;
 }

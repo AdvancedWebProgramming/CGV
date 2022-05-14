@@ -1,6 +1,7 @@
 package com.kit.cgv.jpa.domain.trailer;
 
 import com.kit.cgv.jpa.domain.common.BaseTimeEntity;
+import com.kit.cgv.jpa.domain.movie.Movie;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,6 +25,10 @@ public class Trailer extends BaseTimeEntity {
     @Column(name="PATH",nullable = false)
     private String path;
 
-    @Column(name="TYPE", nullable = true)
+    @Column(name="TYPE", nullable = false)
     private String type;
+
+    @JoinColumn(name = "MOVIE_ID")
+    @ManyToOne
+    private Movie movie;
 }

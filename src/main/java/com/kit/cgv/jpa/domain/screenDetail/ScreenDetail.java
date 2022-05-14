@@ -1,6 +1,8 @@
 package com.kit.cgv.jpa.domain.screenDetail;
 
 import com.kit.cgv.jpa.domain.common.BaseTimeEntity;
+import com.kit.cgv.jpa.domain.screen.Screen;
+import com.kit.cgv.jpa.domain.theater.Theater;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,14 +26,14 @@ public class ScreenDetail extends BaseTimeEntity {
 
     @ManyToOne
     @JoinColumn(name = "SCREEN_ID", nullable = false)
-    private Long screenID;
+    private Screen screen;
 
     @Column(name = "SCREEN_NUM")
     private Long screenNum;//상영회차
 
     @OneToOne
-    @JoinColumn(name = "THEATER_NUM")
-    private int theaterNum;//상영관번호
+    @JoinColumn(name = "THEATER")
+    private Theater theater;//상영관번호
 
     @Column(name= "SCREEN_TIME")
     private LocalTime screenTime; //상영시간

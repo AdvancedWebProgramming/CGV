@@ -19,43 +19,46 @@ import com.kit.cgv.jpa.domain.member.Member;
 
 import com.kit.cgv.jpa.domain.movie.Movie;
 
+import jdk.incubator.vector.DoubleVector;
+import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+
 import lombok.NoArgsConstructor;
 
-@Data
 @Table(name="RATINGBOARD")
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
 public class RatingBoard extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Column(name = "RATING_BOARD_ID")
+    private Long ratingBoardId;
 
     @OneToOne
-    @JoinColumn(name = "movieId")
+    @JoinColumn(name = "MOVIE_ID")
     private Movie movie;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "MEMBER_ID")
-    private Member user;
+    @ManyToOne
+    @JoinColumn(name = "WRITER_ID", nullable = false)
+    private Member writer;
 
-    @Column
+    @Column(name = "TITLE", nullable = false)
     private String title;
 
     @Lob
+    @Column(name = "CONTENT", nullable = false)
     private String content;
 
     @ColumnDefault("0")
-    private int likeCount;
+    @Column(name = "LIKE_COUNT", nullable = false)
+    private Long likeCount;
 
-    @Column
-    private double grade;
+    @Column(name = "GRADE")
+    private Double grade;
 }
