@@ -1,4 +1,4 @@
-package com.kit.cgv.jpa.domain.reservationDistribution;
+package com.kit.cgv.jpa.domain.reservationdistribution;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

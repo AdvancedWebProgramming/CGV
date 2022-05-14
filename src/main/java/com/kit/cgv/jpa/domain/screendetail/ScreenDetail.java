@@ -1,4 +1,4 @@
-package com.kit.cgv.jpa.domain.screenDetail;
+package com.kit.cgv.jpa.domain.screendetail;
 
 import com.kit.cgv.jpa.domain.common.BaseTimeEntity;
 import com.kit.cgv.jpa.domain.screen.Screen;
@@ -10,7 +10,6 @@ import lombok.Setter;
 
 
 import javax.persistence.*;
-import java.sql.Time;
 import java.time.LocalTime;
 
 @Entity

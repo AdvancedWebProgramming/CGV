@@ -1,4 +1,4 @@
-package com.kit.cgv.jpa.domain.ratingBoard;
+package com.kit.cgv.jpa.domain.ratingboard;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

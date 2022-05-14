@@ -1,6 +1,5 @@
-package com.kit.cgv.jpa.domain.screenDetail;
+package com.kit.cgv.jpa.domain.screendetail;
 
-import com.kit.cgv.jpa.domain.screenDetail.ScreenDetail;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ScreenDetailRepository extends JpaRepository<ScreenDetail, Long> {

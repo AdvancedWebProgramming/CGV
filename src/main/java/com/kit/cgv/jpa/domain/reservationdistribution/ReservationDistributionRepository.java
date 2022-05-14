@@ -1,4 +1,4 @@
-package com.kit.cgv.jpa.domain.reservationDistribution;
+package com.kit.cgv.jpa.domain.reservationdistribution;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
