@@ -1,4 +1,4 @@
-package com.kit.cgv.jpa.domain.reservationDetail;
+package com.kit.cgv.jpa.domain.reservationdetail;
 
 import com.kit.cgv.jpa.domain.common.BaseTimeEntity;
 import com.kit.cgv.jpa.domain.reservation.Reservation;
@@ -10,7 +10,6 @@ import lombok.Setter;
 
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Getter

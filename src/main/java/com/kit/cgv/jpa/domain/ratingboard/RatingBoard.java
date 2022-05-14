@@ -1,10 +1,7 @@
-package com.kit.cgv.jpa.domain.ratingBoard;
-
-import java.sql.Timestamp;
+package com.kit.cgv.jpa.domain.ratingboard;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,10 +16,8 @@ import com.kit.cgv.jpa.domain.member.Member;
 
 import com.kit.cgv.jpa.domain.movie.Movie;
 
-import jdk.incubator.vector.DoubleVector;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.ColumnDefault;
-import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.AllArgsConstructor;
 
