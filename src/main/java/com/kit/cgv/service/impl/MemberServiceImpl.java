@@ -1,14 +1,13 @@
 package com.kit.cgv.service.impl;
 
 
-import com.kit.cgv.dto.member.MemberEnrollDTO;
+import com.kit.cgv.dto.member.MemberSignUpDTO;
 import com.kit.cgv.dto.member.MemberLoginDTO;
 import com.kit.cgv.jpa.domain.member.Member;
 import com.kit.cgv.jpa.domain.member.MemberRepository;
 import com.kit.cgv.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -35,7 +34,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public ResponseEntity enroll(MemberEnrollDTO dto) {
+    public ResponseEntity signUp(MemberSignUpDTO dto) {
         Member findMember = findMemberByLoginId(dto.getId());
         if(null != findMember){
             return new ResponseEntity("아이디가 존재합니다.",HttpStatus.FORBIDDEN);
