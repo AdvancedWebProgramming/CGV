@@ -1,12 +1,10 @@
 package com.kit.cgv.controller;
 
-import com.kit.cgv.dto.member.MemberEnrollDTO;
+import com.kit.cgv.dto.member.MemberSignUpDTO;
 import com.kit.cgv.dto.member.MemberLoginDTO;
 import com.kit.cgv.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,8 +22,8 @@ public class MemberController {
     }
 
     @PostMapping
-    public ResponseEntity<?> enrollMember(MemberEnrollDTO dto){
-        return memberService.enroll(dto);
+    public ResponseEntity<?> signUp(MemberSignUpDTO dto){
+        return memberService.signUp(dto);
     }
 
 }
