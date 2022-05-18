@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 
 import javax.persistence.*;
@@ -20,7 +21,7 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
+@SuperBuilder
 public class Member extends BaseTimeEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "MEMBER_ID", nullable = false)
@@ -29,8 +30,8 @@ public class Member extends BaseTimeEntity {
     private String memberLoginID;
     @Column(name = "MEMBER_PWD", nullable = false)
     private String memberPWD;
-    @Column(name ="NICKNAME", nullable = false)
-    private String nickname;
+    @Column(name ="NAME", nullable = false)
+    private String name;
     @Column(name = "BIRTHDAY")
     private LocalDate birthday;
 }

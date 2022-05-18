@@ -1,5 +1,6 @@
 package com.kit.cgv.controller;
 
+import com.kit.cgv.dto.member.MemberEnrollDTO;
 import com.kit.cgv.dto.member.MemberLoginDTO;
 import com.kit.cgv.service.MemberService;
 import lombok.RequiredArgsConstructor;
@@ -21,4 +22,10 @@ public class MemberController {
     public ResponseEntity<?> login(MemberLoginDTO dto) {
         return memberService.Login(dto);
     }
+
+    @PostMapping
+    public ResponseEntity<?> enrollMember(MemberEnrollDTO dto){
+        return memberService.enroll(dto);
+    }
+
 }
