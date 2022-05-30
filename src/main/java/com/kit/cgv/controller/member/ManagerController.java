@@ -1,4 +1,4 @@
-package com.kit.cgv.controller;
+package com.kit.cgv.controller.member;
 
 import com.kit.cgv.dto.manager.ManagerLoginDTO;
 import com.kit.cgv.dto.member.MemberLoginDTO;

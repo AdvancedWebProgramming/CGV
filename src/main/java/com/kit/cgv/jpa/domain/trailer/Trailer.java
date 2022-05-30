@@ -31,4 +31,7 @@ public class Trailer extends BaseTimeEntity {
     @JoinColumn(name = "MOVIE_ID")
     @ManyToOne
     private Movie movie;
+
+    @Column(name="FILE_NAME", nullable = false)
+    private String fileName;
 }
