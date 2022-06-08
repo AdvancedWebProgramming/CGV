@@ -24,20 +24,25 @@ public class Seat extends BaseTimeEntity {
     @Column(name="SEAT_ID")
     private Long seatId;
 
-    @Column(name="ROW_NUM")
+    @Column(name="ROW_NUM", nullable = false)
     private Long rowNum;
 
-    @Column(name="COL_NUM")
+    @Column(name="COL_NUM", nullable = false)
     private Long colNum;
 
-    @Column(name="IS_ABLE")
+    @Column(name="IS_ABLE", nullable = false)
     private Boolean isAble; //쓸수 있다 없다.
 
     @Column(name="SEAT_DESCRIPTION") //못쓰는 이유.
     private String seatDescription;
 
-    @JoinColumn(name="Theater")
+    @JoinColumn(name="Theater" , nullable = false)
     @ManyToOne
     private Theater theater;
+
+    public void setSeatStatus(Boolean isAble, String seatDescription){
+        this.isAble = isAble;
+        this.seatDescription = seatDescription;
+    }
 
 }

@@ -38,20 +38,20 @@ public class ReservationDistribution extends BaseTimeEntity {
     private Movie movie;
 
     @Column(name = "WOMAN")
-    private Double woman;
+    private Long woman;
 
     @Column(name = "TEN")
-    private Double ten;
+    private Long ten;
 
     @Column(name = "TWENTY")
-    private Double twenty;
+    private Long twenty;
 
     @Column(name = "THIRTY")
-    private Double thirty;
+    private Long thirty;
 
     @Column(name = "FORTY")
-    private Double forty;
+    private Long forty;
 
     @Column(name = "FIFTY")
-    private Double fifty;
+    private Long fifty;
 }

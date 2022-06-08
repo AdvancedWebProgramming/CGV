@@ -27,16 +27,20 @@ public class ScreenDetail extends BaseTimeEntity {
     @JoinColumn(name = "SCREEN_ID", nullable = false)
     private Screen screen;
 
-    @Column(name = "SCREEN_NUM")
+    @Column(name = "SCREEN_NUM" , nullable = false)
     private Long screenNum;//상영회차
 
     @OneToOne
-    @JoinColumn(name = "THEATER")
+    @JoinColumn(name = "THEATER" , nullable = false)
     private Theater theater;//상영관번호
 
-    @Column(name= "SCREEN_TIME")
+    @Column(name= "SCREEN_TIME" , nullable = false)
     private LocalTime screenTime; //상영시간
 
-    @Column(name = "PEOPLE")
+    @Column(name = "PEOPLE" , nullable = false)
     private Long people;//관람객수
+
+    public void addPeople(Long people){
+        this.people = people;
+    }
 }

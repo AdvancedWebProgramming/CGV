@@ -52,6 +52,6 @@ public class TrailerServiceImpl implements TrailerService {
     public ResponseEntity saveTrailer(MultipartFile trailer, Long movieId) {
         Movie findMovie = movieRepository.getById(movieId);
 
-        return saveTrailer(trailer, movieId);
+        return saveTrailer(trailer, findMovie);
     }
 }
