@@ -1,6 +1,8 @@
 package com.kit.cgv.jpa.domain.member;
 
 import com.kit.cgv.jpa.domain.common.BaseTimeEntity;
+import com.kit.cgv.jpa.domain.ratingboard.RatingBoard;
+import com.kit.cgv.jpa.domain.reservation.Reservation;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +15,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
-
+import java.util.List;
 
 
 @Entity
@@ -34,4 +36,10 @@ public class Member extends BaseTimeEntity {
     private String name;
     @Column(name = "BIRTHDAY")
     private LocalDate birthday;
+
+    @OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
+    private List<Reservation> reservations;
+
+    @OneToMany(mappedBy = "writer", fetch = FetchType.LAZY)
+    private List<RatingBoard> ratingBoards;
 }

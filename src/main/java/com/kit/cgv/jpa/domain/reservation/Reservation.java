@@ -2,6 +2,7 @@ package com.kit.cgv.jpa.domain.reservation;
 
 import com.kit.cgv.jpa.domain.common.BaseTimeEntity;
 import com.kit.cgv.jpa.domain.member.Member;
+import com.kit.cgv.jpa.domain.reservationdetail.ReservationDetail;
 import com.kit.cgv.jpa.domain.screen.Screen;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,6 +11,7 @@ import lombok.Setter;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -37,4 +39,6 @@ public class Reservation extends BaseTimeEntity {
     @Column(name = "PRICE", nullable = false)
     private Long price;
 
+    @OneToMany(mappedBy = "reservation", fetch = FetchType.LAZY)
+    private List<ReservationDetail> reservationDetails;
 }

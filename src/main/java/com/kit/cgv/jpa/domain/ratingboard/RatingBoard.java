@@ -1,15 +1,6 @@
 package com.kit.cgv.jpa.domain.ratingboard;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import com.kit.cgv.jpa.domain.common.BaseTimeEntity;
 import com.kit.cgv.jpa.domain.member.Member;
@@ -35,8 +26,8 @@ public class RatingBoard extends BaseTimeEntity {
     @Column(name = "RATING_BOARD_ID")
     private Long ratingBoardId;
 
-    @OneToOne
-    @JoinColumn(name = "MOVIE_ID")
+    @ManyToOne
+    @JoinColumn(name = "MOVIE_ID", nullable = false)
     private Movie movie;
 
     @ManyToOne

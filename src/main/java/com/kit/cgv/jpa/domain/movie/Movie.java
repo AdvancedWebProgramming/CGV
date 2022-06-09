@@ -2,6 +2,8 @@ package com.kit.cgv.jpa.domain.movie;
 
 import com.kit.cgv.jpa.domain.common.BaseTimeEntity;
 import com.kit.cgv.jpa.domain.movieposter.MoviePoster;
+import com.kit.cgv.jpa.domain.ratingboard.RatingBoard;
+import com.kit.cgv.jpa.domain.screen.Screen;
 import com.kit.cgv.jpa.domain.trailer.Trailer;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -60,5 +62,12 @@ public class Movie extends BaseTimeEntity {
     @Column(name = "ACTORS")//length 디폴트가 255라고 되어있어서 뺌, 확실하지 않음
     private String actors;
 
+    @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY )
+    private List<Screen> screens;
 
+    @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
+    private List<Trailer> trailers;
+
+    @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
+    private List<RatingBoard> ratingBoards;
 }

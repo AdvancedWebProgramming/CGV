@@ -2,6 +2,7 @@ package com.kit.cgv.jpa.domain.seat;
 
 
 import com.kit.cgv.jpa.domain.common.BaseTimeEntity;
+import com.kit.cgv.jpa.domain.reservationdetail.ReservationDetail;
 import com.kit.cgv.jpa.domain.theater.Theater;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,6 +11,7 @@ import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -40,7 +42,11 @@ public class Seat extends BaseTimeEntity {
     @ManyToOne
     private Theater theater;
 
-    public void setSeatStatus(Boolean isAble, String seatDescription){
+    @OneToMany(mappedBy = "seat")
+    private List<ReservationDetail> reservationDetails;
+
+
+    public void setSeatStatus(Boolean isAble, String seatDescription) {
         this.isAble = isAble;
         this.seatDescription = seatDescription;
     }

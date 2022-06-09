@@ -24,9 +24,9 @@ public class ReservationDetail extends BaseTimeEntity {
 
     @ManyToOne
     @JoinColumn(name = "RESERVATION_ID", nullable = false)
-    private Reservation reservationID;
+    private Reservation reservation;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="SEAT_ID", nullable = false)
     private Seat seat;
 }
