@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 
 import javax.persistence.*;
@@ -22,7 +23,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
+@SuperBuilder
 public class Movie extends BaseTimeEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "MOVIE_ID", nullable = false)
@@ -34,7 +35,7 @@ public class Movie extends BaseTimeEntity {
     @Column(name = "GENRE")
     private String genre;
     @Column(name = "RUNTIME")
-    private String runtime;
+    private Long runtime;
     @Column(name = "OPENING_DATE")
     private LocalDate openingDate;
     @Column(name = "CLOSING_DATE")

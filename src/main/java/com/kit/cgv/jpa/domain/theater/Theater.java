@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 
 import javax.persistence.*;
@@ -16,11 +17,11 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
+@SuperBuilder
 public class Theater extends BaseTimeEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "THEATER_NUM", nullable = false)
-    private Long theaterNum;//상영관번호
+    @Column(name = "THEATER_Id", nullable = false)
+    private Long theaterId;//상영관번호
     @Column(name = "ROW", nullable = false)
     private Long rowMany;//행수
     @Column(name = "COLUMN", nullable = false)
