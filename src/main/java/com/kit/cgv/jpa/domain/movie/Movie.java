@@ -11,11 +11,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
-
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 @Entity
@@ -27,7 +25,7 @@ import java.util.List;
 public class Movie extends BaseTimeEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "MOVIE_ID", nullable = false)
-    private Long movieID;
+    private Long movieId;
     @Column(name = "TITLE", nullable = false)
     private String title;
     @Column(name = "RATE")
@@ -64,11 +62,11 @@ public class Movie extends BaseTimeEntity {
     private String actors;
 
     @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY )
-    private List<Screen> screens;
+    private List<Screen> screens  = new LinkedList<>();
 
     @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
-    private List<Trailer> trailers;
+    private List<Trailer> trailers  = new LinkedList<>();
 
     @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
-    private List<RatingBoard> ratingBoards;
+    private List<RatingBoard> ratingBoards  = new LinkedList<>();
 }

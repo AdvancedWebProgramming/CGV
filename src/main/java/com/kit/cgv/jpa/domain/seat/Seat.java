@@ -11,6 +11,7 @@ import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
+import java.util.LinkedList;
 import java.util.List;
 
 @Entity
@@ -43,7 +44,7 @@ public class Seat extends BaseTimeEntity {
     private Theater theater;
 
     @OneToMany(mappedBy = "seat")
-    private List<ReservationDetail> reservationDetails;
+    private List<ReservationDetail> reservationDetails = new LinkedList<>();
 
 
     public void setSeatStatus(Boolean isAble, String seatDescription) {

@@ -10,6 +10,7 @@ import lombok.experimental.SuperBuilder;
 
 
 import javax.persistence.*;
+import java.util.LinkedList;
 import java.util.List;
 
 @Entity
@@ -28,5 +29,5 @@ public class Theater extends BaseTimeEntity {
     private Long columnMany;//열수
 
     @OneToMany(mappedBy = "seatId")
-    private List<Seat> seats;
+    private List<Seat> seats = new LinkedList<>();
 }

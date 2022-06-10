@@ -7,7 +7,5 @@ import java.util.List;
 
 public interface MovieService {
 
-    private List<MovieDTO> getMovies(){
-
-    }
+    List<MovieDTO> getMovies();
 }

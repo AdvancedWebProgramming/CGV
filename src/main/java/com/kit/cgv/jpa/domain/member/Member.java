@@ -9,12 +9,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
-
 import javax.persistence.*;
-
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 
@@ -38,8 +35,8 @@ public class Member extends BaseTimeEntity {
     private LocalDate birthday;
 
     @OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
-    private List<Reservation> reservations;
+    private List<Reservation> reservations  = new LinkedList<>();
 
     @OneToMany(mappedBy = "writer", fetch = FetchType.LAZY)
-    private List<RatingBoard> ratingBoards;
+    private List<RatingBoard> ratingBoards  = new LinkedList<>();
 }

@@ -1,24 +1,25 @@
 package com.kit.cgv.jpa.domain.ratingboard;
 
-import javax.persistence.*;
-
+import com.kit.cgv.dto.ratingboard.RatingBoardDTO;
 import com.kit.cgv.jpa.domain.common.BaseTimeEntity;
 import com.kit.cgv.jpa.domain.member.Member;
-
 import com.kit.cgv.jpa.domain.movie.Movie;
-
-import lombok.experimental.SuperBuilder;
-import org.hibernate.annotations.ColumnDefault;
-
+import com.kit.cgv.jpa.domain.ratingboardlike.RatingBoardLike;
 import lombok.AllArgsConstructor;
-
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
+
+import javax.persistence.*;
+import java.util.LinkedList;
+import java.util.List;
 
 @Table(name="RATINGBOARD")
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
 @Entity
+@Getter
 public class RatingBoard extends BaseTimeEntity {
 
     @Id
@@ -34,17 +35,38 @@ public class RatingBoard extends BaseTimeEntity {
     @JoinColumn(name = "WRITER_ID", nullable = false)
     private Member writer;
 
-    @Column(name = "TITLE", nullable = false)
-    private String title;
+    @Column(name = "IS_GOOD", nullable = false)
+    private Boolean isGood;
 
     @Lob
     @Column(name = "CONTENT", nullable = false)
     private String content;
 
-    @ColumnDefault("0")
     @Column(name = "LIKE_COUNT", nullable = false)
     private Long likeCount;
 
     @Column(name = "GRADE")
     private Double grade;
+
+    @OneToMany(mappedBy = "ratingBoard")
+    private List<RatingBoardLike> ratingBoardLikeList = new LinkedList<>();
+
+    public void increaseLikeCount(){
+        likeCount++;
+    }
+    public void decreaseLikeCount(){
+        likeCount--;
+    }
+
+    public RatingBoardDTO toDTO(Boolean isLiked){
+        return RatingBoardDTO.builder()
+                .ratingBoardId(ratingBoardId)
+                .name(writer.getName())
+                .accountId(writer.getMemberID())
+                .movieId(movie.getMovieId())
+                .grade(grade)
+                .isLiked(isLiked)
+                .content(content)
+                .build();
+    }
 }

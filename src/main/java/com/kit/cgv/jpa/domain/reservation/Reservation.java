@@ -12,6 +12,7 @@ import lombok.experimental.SuperBuilder;
 
 
 import javax.persistence.*;
+import java.util.LinkedList;
 import java.util.List;
 
 @Entity
@@ -40,5 +41,5 @@ public class Reservation extends BaseTimeEntity {
     private Long price;
 
     @OneToMany(mappedBy = "reservation", fetch = FetchType.LAZY)
-    private List<ReservationDetail> reservationDetails;
+    private List<ReservationDetail> reservationDetails  = new LinkedList<>();
 }

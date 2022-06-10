@@ -21,7 +21,6 @@ import com.kit.cgv.jpa.domain.seat.SeatRepository;
 import com.kit.cgv.jpa.domain.theater.Theater;
 import com.kit.cgv.jpa.domain.theater.TheaterRepository;
 import com.kit.cgv.jpa.domain.trailer.TrailerRepository;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -31,7 +30,6 @@ import org.springframework.stereotype.Component;
 
 import javax.transaction.Transactional;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Optional;
 
@@ -92,7 +90,7 @@ public class DummyDataLoader implements ApplicationListener<ContextRefreshedEven
         return movieRepository.save(
                 Movie.builder()
                         .actors(actor)
-                        .movieID(movieId)
+                        .movieId(movieId)
                         .closingDate(closingDate)
                         .description(description)
                         .genre(genre)
@@ -118,7 +116,7 @@ public class DummyDataLoader implements ApplicationListener<ContextRefreshedEven
                 .build());
     }
 
-    private RatingBoard createRatingBoardIfNotFound(Long ratingBoardId, Long movieId, Long memberId, String title, String content, Double grade){
+    private RatingBoard createRatingBoardIfNotFound(Long ratingBoardId, Long movieId, Long memberId, String content, Double grade){
         Optional<RatingBoard> findRatingBoard = ratingBoardRepository.findById(ratingBoardId);
 
         if(findRatingBoard.isPresent()){
@@ -143,7 +141,6 @@ public class DummyDataLoader implements ApplicationListener<ContextRefreshedEven
                 RatingBoard.builder()
                         .ratingBoardId(ratingBoardId)
                         .movie(findMovie.get())
-                        .title(title)
                         .content(content)
                         .grade(grade)
                         .likeCount(0L)

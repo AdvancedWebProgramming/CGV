@@ -9,10 +9,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
-
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 @Entity
@@ -33,5 +32,5 @@ public class Screen extends BaseTimeEntity {
     private Movie movie;
 
     @OneToMany(mappedBy = "screen", fetch = FetchType.LAZY)
-    private List<Reservation> reservations;
+    private List<Reservation> reservations = new LinkedList<>();
 }
