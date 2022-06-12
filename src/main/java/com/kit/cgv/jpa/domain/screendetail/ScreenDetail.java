@@ -32,7 +32,7 @@ public class ScreenDetail extends BaseTimeEntity {
     private Long screenNum;//상영회차
 
     @OneToOne
-    @JoinColumn(name = "THEATER" , nullable = false)
+    @JoinColumn(name = "THEATER_ID" , nullable = false)
     private Theater theater;//상영관번호
 
     @Column(name= "SCREEN_TIME" , nullable = false)

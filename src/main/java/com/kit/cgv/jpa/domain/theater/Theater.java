@@ -23,9 +23,9 @@ public class Theater extends BaseTimeEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "THEATER_Id", nullable = false)
     private Long theaterId;//상영관번호
-    @Column(name = "ROW", nullable = false)
+    @Column(name = "ROW_NUM", nullable = false)
     private Long rowMany;//행수
-    @Column(name = "COLUMN", nullable = false)
+    @Column(name = "COL_NUM", nullable = false)
     private Long columnMany;//열수
 
     @OneToMany(mappedBy = "seatId")

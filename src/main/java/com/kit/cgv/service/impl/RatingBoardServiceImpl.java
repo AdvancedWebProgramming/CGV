@@ -37,7 +37,8 @@ public class RatingBoardServiceImpl implements RatingBoardService {
 
     @Override
     public ResponseEntity findAllWithMovieId(Long movieId) {
-        List<RatingBoard> findList = ratingBoardRepository.getRatingBoardsByMovieId(movieId);
+        Movie findMovie = movieRepository.getById(movieId);
+        List<RatingBoard> findList = ratingBoardRepository.getRatingBoardsByMovie(findMovie);
 
         return ResponseEntity.status(HttpStatus.OK).body(findList.stream()
                 .map(ratingBoard -> ratingBoard.toDTO(ratingBoardLikeService.isLiked(ratingBoard.getRatingBoardId(), ratingBoard.getWriter().getMemberID())))
