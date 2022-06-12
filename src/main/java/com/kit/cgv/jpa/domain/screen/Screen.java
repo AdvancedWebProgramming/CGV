@@ -3,6 +3,7 @@ package com.kit.cgv.jpa.domain.screen;
 import com.kit.cgv.jpa.domain.common.BaseTimeEntity;
 import com.kit.cgv.jpa.domain.movie.Movie;
 import com.kit.cgv.jpa.domain.reservation.Reservation;
+import com.kit.cgv.jpa.domain.screendetail.ScreenDetail;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,4 +34,7 @@ public class Screen extends BaseTimeEntity {
 
     @OneToMany(mappedBy = "screen", fetch = FetchType.LAZY)
     private List<Reservation> reservations = new LinkedList<>();
+
+    @OneToMany(mappedBy ="screen", fetch = FetchType.LAZY)
+    private List<ScreenDetail> screenDetails = new LinkedList<>();
 }

@@ -1,5 +1,6 @@
 package com.kit.cgv.jpa.domain.member;
 
+import com.kit.cgv.dto.member.MemberSignUpDTO;
 import com.kit.cgv.jpa.domain.common.BaseTimeEntity;
 import com.kit.cgv.jpa.domain.ratingboard.RatingBoard;
 import com.kit.cgv.jpa.domain.reservation.Reservation;
@@ -39,4 +40,13 @@ public class Member extends BaseTimeEntity {
 
     @OneToMany(mappedBy = "writer", fetch = FetchType.LAZY)
     private List<RatingBoard> ratingBoards  = new LinkedList<>();
+
+    public MemberSignUpDTO toSignUpDTO(String confirmPasswordDTO){
+        return MemberSignUpDTO.builder()
+                .id(memberID)
+                .birthday(birthday.toString())
+                .loginId(memberLoginID)
+                .password(memberPWD)
+                .confrimPassword(confirmPasswordDTO).build();
+    }
 }

@@ -46,13 +46,13 @@ public class RatingBoardServiceImpl implements RatingBoardService {
 
     @Override
     public ResponseEntity createRatingBoard(RatingBoardDTO dto) {
-        Member findMember = memberRepository.findByMemberLoginID(dto.getAccountLoginId());
+        Optional<Member> findMember = memberRepository.findById(dto.getAccountId());
         Optional<Movie> findMovie = movieRepository.findById(dto.getMovieId());
 
         if(findMovie.isEmpty()){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("적절하지 않은 movieId 입니다");
         }
-        RatingBoard ratingBoard = dto.toWriteEntity(findMovie.get(), findMember);
+        RatingBoard ratingBoard = dto.toWriteEntity(findMovie.get(), findMember.get());
         ratingBoardRepository.save(ratingBoard);
         return ResponseEntity.status(HttpStatus.OK).body(ratingBoard.toDTO(false)); //default == false;
     }

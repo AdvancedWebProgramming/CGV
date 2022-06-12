@@ -45,8 +45,7 @@ public class RatingBoard extends BaseTimeEntity {
     @Column(name = "LIKE_COUNT", nullable = false)
     private Long likeCount;
 
-    @Column(name = "GRADE")
-    private Double grade;
+
 
     @OneToMany(mappedBy = "ratingBoard")
     private List<RatingBoardLike> ratingBoardLikeList = new LinkedList<>();
@@ -64,7 +63,6 @@ public class RatingBoard extends BaseTimeEntity {
                 .name(writer.getName())
                 .accountId(writer.getMemberID())
                 .movieId(movie.getMovieId())
-                .grade(grade)
                 .isLiked(isLiked)
                 .content(content)
                 .build();

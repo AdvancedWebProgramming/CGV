@@ -1,7 +1,6 @@
 package com.kit.cgv.controller.member;
 
 import com.kit.cgv.dto.manager.ManagerLoginDTO;
-import com.kit.cgv.dto.member.MemberLoginDTO;
 import com.kit.cgv.service.ManagerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -21,5 +20,6 @@ public class ManagerController {
     public ResponseEntity login(ManagerLoginDTO dto){
         return managerService.login(dto);
     }
+
 
 }

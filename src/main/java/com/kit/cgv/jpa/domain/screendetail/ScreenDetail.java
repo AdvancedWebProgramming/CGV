@@ -38,10 +38,23 @@ public class ScreenDetail extends BaseTimeEntity {
     @Column(name= "SCREEN_TIME" , nullable = false)
     private LocalTime screenTime; //상영시간
 
+
     @Column(name = "PEOPLE" , nullable = false)
     private Long people;//관람객수
+
+    @Column(name = "FIXED_RATE")
+    private Long fixedRate;
+
+    @Column(name = "DISCOUNT")
+    private Long discount;
+
+    @Column(name = "SEAT")
+    private Long seat; //남은 좌석 수
 
     public void addPeople(Long people){
         this.people = people;
     }
+
+    public void minusSeat(Long seat) { this.seat -= seat;}
+    public void plusSeat(Long seat) { this.seat += seat;}
 }

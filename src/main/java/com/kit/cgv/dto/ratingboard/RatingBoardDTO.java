@@ -19,8 +19,7 @@ public class RatingBoardDTO {
     private Long accountId;
     private String accountLoginId;
     private String name;
-    private Double grade;
-    private String title;
+
     private Long movieId;
     private Long likeCount;
     private Boolean isLiked;
@@ -31,7 +30,6 @@ public class RatingBoardDTO {
         return RatingBoard.builder()
                 .writer(member)
                 .likeCount(0L)
-                .grade(grade)
                 .content(content)
                 .isGood(isGood)
                 .movie(movie).build();
