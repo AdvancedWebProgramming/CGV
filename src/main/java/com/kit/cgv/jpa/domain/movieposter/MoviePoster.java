@@ -1,5 +1,6 @@
 package com.kit.cgv.jpa.domain.movieposter;
 
+import com.kit.cgv.dto.MoviePosterDTO;
 import com.kit.cgv.jpa.domain.common.BaseTimeEntity;
 import com.kit.cgv.jpa.domain.movie.Movie;
 import lombok.AllArgsConstructor;
@@ -25,10 +26,16 @@ public class MoviePoster extends BaseTimeEntity {
     @Column(name = "PATH", nullable = false)
     private String path;
 
-    @Column(name = "TYPE", nullable = false)
-    private String type;
+    @Column(name = "FILE_NAME", nullable = false)
+    private String fileName;
 
     @JoinColumn(name = "MOVIE_ID")
     @OneToOne
     private Movie movie;
+
+    public MoviePosterDTO toDTO(){
+        return MoviePosterDTO.builder()
+                .id(id)
+                .path("http://kitcapstone.iptime.org:8080/static/images/"+fileName).build();
+    }
 }
