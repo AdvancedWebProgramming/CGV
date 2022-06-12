@@ -10,6 +10,7 @@ const SignUp = () =>{
     const[data, setData] = useState({
         id:'',
         password:'',
+        confirmPassword:'',
         name:'',
         birthday:''
     })
@@ -43,7 +44,7 @@ const SignUp = () =>{
                     name:'',
                     birthday:''
                 })
-                navigate("/list");
+                navigate("/login");
             }
         })
     }
@@ -56,7 +57,7 @@ const SignUp = () =>{
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" name="password" onChange={changeData} value={data.password} placeholder="Enter password" />
         <Form.Label>Confirm Password</Form.Label>
-        <Form.Control type="password" name="confirmpassword" onChange={changeData} value={data.confirmPassword} placeholder="Confirm password" />
+        <Form.Control type="password" name="confirm password" onChange={changeData} value={data.confirmPassword} placeholder="Confirm password" />
         <Form.Label>Name</Form.Label>
         <Form.Control type="text" name="name" onChange={changeData} value={data.name} placeholder="Enter Name" />
         <Form.Label>Birthday</Form.Label>
