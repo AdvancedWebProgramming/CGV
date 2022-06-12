@@ -1,34 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React, {useState, useEffect} from 'react';
+import Navigation from './components/Navigation';
+import Login from './components/Login';
+import SignUp from './components/SignUp';
+import { BrowserRouter, Route, Switch, Routes } from 'react-router-dom';
 function App() {
-  /*
-  useEffect(() => {
-    fetch("/hello")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        setMessage(data);
-      });
-  },[]);
-   */
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+          <BrowserRouter>
+                <Navigation />
+                <br/>
+                <Routes>
+                    <Route path="/login" element={<Login/>} />
+                    <Route path="/signup" element={<SignUp/>} />
+                </Routes>
+            </BrowserRouter>
     </div>
   );
 }
