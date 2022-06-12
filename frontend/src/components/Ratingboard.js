@@ -1,16 +1,31 @@
 import {useState} from 'react';
-import { Form, Button, Container } from 'react-bootstrap'
+import { Form, Button, Container, ButtonGroup } from 'react-bootstrap'
 import axios from 'axios';
 import {useNavigate} from "react-router-dom";
 
-const Login = () => {
+const Ratingboard = () => {
     const navigate = useNavigate();
+    const [checked, setChecked] = useState(false);
+    const [colorButtonValue, setColorButtonValue] = useState('1');
+    const colors = [
+        {name : '좋았어요', value: '1'},
+        {name : '별로였어요', value : '2'}
+    ]
+
+    const likes = [
+            {name : 'like', value:'1'},
+            {name : 'soso', value:'0'}
+    ];
+
+
+    const handleChangeButtonColor =(e)=> {
+
+    }
 
     const[data, setData] = useState({
         isliked:'',
         content:'',
-        movie:'',
-        writer:''
+        movie:'',//현재 상세페이지의 영화 id
     })
 
     const changeData =(e)=>{
@@ -23,7 +38,7 @@ const Login = () => {
     }
 
     const submit =()=>{
-        axios.post("/login", {
+        axios.post("/ratingboard", {
             isliked:data.isliked,
             content:data.content
         }).then((resp)=>{
@@ -44,20 +59,15 @@ const Login = () => {
         <Container>
             <Form>
 
-              <Button variant="primary" className = "m-1" type="submit">
-                               재밌어요
-              </Button>
+              <ButtonGroup aria-label = "LikeMovie" className = 'mb-3'>
 
-              <Button variant="secondary" className = "m-1" type="submit">
-                              별로였어요
-              </Button>
+              </ButtonGroup>
 
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>ID</Form.Label>
-                <Form.Control type="text" name = "id" onChange={changeData} value={data.id} placeholder="Enter ID"/>
+              <Form.Group className="mb-3" controlId="TextareaForReview">
+                <Form.Control as="textarea" rows={5} name = "content" onChange={changeData} value={data.content} placeholder="리뷰 내용을 입력하세요"/>
               </Form.Group>
 
-              <Button vaiantr="primary" type="submit">
+              <Button variant="primary" type="submit">
                 Submit
               </Button>
             </Form>
@@ -66,4 +76,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Ratingboard;

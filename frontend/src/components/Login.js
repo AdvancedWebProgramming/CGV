@@ -7,7 +7,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     const[data, setData] = useState({
-        id:'',
+        loginid:'',
         password:''
     })
 
@@ -22,7 +22,7 @@ const Login = () => {
 
     const submit =()=>{
         axios.post("/login", {
-            id:data.id,
+            id:data.loginid,
             password:data.password
         }).then((resp)=>{
             if(resp.data==="success"){//서버 respond보고 수정해야함
@@ -43,7 +43,7 @@ const Login = () => {
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>ID</Form.Label>
-                <Form.Control type="text" name = "id" onChange={changeData} value={data.id} placeholder="Enter ID"/>
+                <Form.Control type="text" name = "loginid" onChange={changeData} value={data.loginid} placeholder="Enter ID"/>
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">

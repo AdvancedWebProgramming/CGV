@@ -8,7 +8,7 @@ const SignUp = () =>{
     const navigate = useNavigate();
 
     const[data, setData] = useState({
-        id:'',
+        loginid:'',
         password:'',
         confirmPassword:'',
         name:'',
@@ -26,7 +26,7 @@ const SignUp = () =>{
 
     const submit =()=>{
         axios.post("/signup", {
-            id:data.id,
+            id:data.loginid,
             password:data.password,
             confirmPassword:data.confirmPassword,
             name:data.name,
@@ -38,7 +38,7 @@ const SignUp = () =>{
             else if(resp.data==="success") {//서버 respond보고 수정해야함
                 alert("등록성공")
                 setData({
-                    id:'',
+                    loginid:'',
                     password:'',
                     confirmPassword:'',
                     name:'',
@@ -53,7 +53,7 @@ const SignUp = () =>{
         <Container>
         <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>ID</Form.Label>
-        <Form.Control type="text" name="ID" onChange={changeData} value={data.id} placeholder="Enter ID" />
+        <Form.Control type="text" name="LoginID" onChange={changeData} value={data.loginid} placeholder="Enter ID" />
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" name="password" onChange={changeData} value={data.password} placeholder="Enter password" />
         <Form.Label>Confirm Password</Form.Label>
