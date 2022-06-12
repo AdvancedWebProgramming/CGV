@@ -116,7 +116,7 @@ public class DummyDataLoader implements ApplicationListener<ContextRefreshedEven
                 .build());
     }
 
-    private RatingBoard createRatingBoardIfNotFound(Long ratingBoardId, Long movieId, Long memberId, String content, Double grade){
+    private RatingBoard createRatingBoardIfNotFound(Long ratingBoardId, Long movieId, Long memberId, String content, Boolean isGood){
         Optional<RatingBoard> findRatingBoard = ratingBoardRepository.findById(ratingBoardId);
 
         if(findRatingBoard.isPresent()){
@@ -142,8 +142,8 @@ public class DummyDataLoader implements ApplicationListener<ContextRefreshedEven
                         .ratingBoardId(ratingBoardId)
                         .movie(findMovie.get())
                         .content(content)
-                        .grade(grade)
                         .likeCount(0L)
+                        .isGood(isGood)
                         .writer(findMember.get())
                         .build()
         );
