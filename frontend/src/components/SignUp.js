@@ -8,7 +8,7 @@ const SignUp = () =>{
     const navigate = useNavigate();
 
     const[data, setData] = useState({
-        loginid:'',
+        loginID:'',
         password:'',
         confirmPassword:'',
         name:'',
@@ -26,7 +26,7 @@ const SignUp = () =>{
 
     const submit =()=>{
         axios.post("/signup", {
-            id:data.loginid,
+            id:data.loginID,
             password:data.password,
             confirmPassword:data.confirmPassword,
             name:data.name,
@@ -38,7 +38,7 @@ const SignUp = () =>{
             else if(resp.data==="success") {//서버 respond보고 수정해야함
                 alert("등록성공")
                 setData({
-                    loginid:'',
+                    loginID:'',
                     password:'',
                     confirmPassword:'',
                     name:'',
@@ -53,15 +53,15 @@ const SignUp = () =>{
         <Container>
         <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>ID</Form.Label>
-        <Form.Control type="text" name="LoginID" onChange={changeData} value={data.loginid} placeholder="Enter ID" />
+        <Form.Control type="text" name="LoginID" onChange={changeData} value={data.loginID} placeholder="Enter ID" />
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" name="password" onChange={changeData} value={data.password} placeholder="Enter password" />
         <Form.Label>Confirm Password</Form.Label>
         <Form.Control type="password" name="confirm password" onChange={changeData} value={data.confirmPassword} placeholder="Confirm password" />
         <Form.Label>Name</Form.Label>
         <Form.Control type="text" name="name" onChange={changeData} value={data.name} placeholder="Enter Name" />
-        <Form.Label>Birthday</Form.Label>
-        <Form.Control type="text" maxLength='6' name="birthday" onChange={changeData} value={data.birthday} placeholder="Enter Birthday(6 letters)" />
+        <Form.Label>Birthday(yyyy-mm-dd)</Form.Label>
+        <Form.Control type="text" maxLength='8' name="birthday" onChange={changeData} value={data.birthday} placeholder="Enter Birthday(6 letters)" />
         <br/>
         <Button type="button" onClick={submit}>등록</Button>
         </Form.Group>
