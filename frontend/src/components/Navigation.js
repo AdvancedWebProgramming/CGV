@@ -8,7 +8,8 @@ const Navigation = () =>{
             <Nav className="me-auto">
             <Nav.Link href="/login">로그인</Nav.Link>
             <Nav.Link href="/signup">회원가입</Nav.Link>
-            <Nav.Link href="/ratingboard">리뷰</Nav.Link>
+            <Nav.Link href="/movie/ratingboard">리뷰</Nav.Link>
+            <Nav.Link href="/movie">영화상세페이지</Nav.Link>
             </Nav>
             </Container>
         </Navbar>

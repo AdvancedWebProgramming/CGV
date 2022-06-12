@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, Container } from 'react-bootstrap'
 import axios from 'axios';
 import {useNavigate} from "react-router-dom";
 
@@ -39,6 +39,7 @@ const Login = () => {
 
     return (
         <div>
+        <Container>
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>ID</Form.Label>
@@ -54,6 +55,7 @@ const Login = () => {
                 Submit
               </Button>
             </Form>
+            </Container>
         </div>
     );
 };
