@@ -35,7 +35,7 @@ const SignUp = () =>{
             if(data.password != data.confirmPassword) {
                 alert("비밀번호와 비밀번호 확인은 같아야합니다.")
             }
-            else if(resp.data==="success") {
+            else if(resp.data==="success") {//서버 respond보고 수정해야함
                 alert("등록성공")
                 setData({
                     id:'',

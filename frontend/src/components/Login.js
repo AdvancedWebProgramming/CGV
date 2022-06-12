@@ -25,13 +25,13 @@ const Login = () => {
             id:data.id,
             password:data.password
         }).then((resp)=>{
-            if(resp.data==="success"){
+            if(resp.data==="success"){//서버 respond보고 수정해야함
                 alert("로그인 성공")
             }
-            else if(resp.data==="wrong ID"){
+            else if(resp.data==="wrong ID"){//서버 respond보고 수정해야함
                 alert("ID를 잘못 입력하였습니다")
             }
-            else if(resp.data==="wrong password"){
+            else if(resp.data==="wrong password"){//서버 respond보고 수정해야함
                 alert("password를 잘못 입력하였습니다")
             }
         })
