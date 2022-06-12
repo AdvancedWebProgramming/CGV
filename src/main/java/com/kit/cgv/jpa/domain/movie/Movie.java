@@ -1,5 +1,6 @@
 package com.kit.cgv.jpa.domain.movie;
 
+import com.kit.cgv.dto.movie.MovieDTO;
 import com.kit.cgv.jpa.domain.common.BaseTimeEntity;
 import com.kit.cgv.jpa.domain.movieposter.MoviePoster;
 import com.kit.cgv.jpa.domain.ratingboard.RatingBoard;
@@ -13,8 +14,10 @@ import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 @Getter
@@ -69,4 +72,19 @@ public class Movie extends BaseTimeEntity {
 
     @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
     private List<RatingBoard> ratingBoards  = new LinkedList<>();
+
+    public MovieDTO toDTO(){
+        return MovieDTO.builder()
+                .actors(Arrays.stream(actors.split(", ")).collect(Collectors.toList()))
+                .description(description)
+                .directors(Arrays.stream(directors.split(", ")).collect(Collectors.toList()))
+                .movieId(movieId)
+                .evaluationRate(evaluationRate)
+                .openingDate(String.format("%d.%d.%d", openingDate.getYear(), openingDate.getMonthValue(), openingDate.getDayOfMonth()))
+                .runtime(runtime)
+                .title(title)
+                .genre(Arrays.stream(genre.split(", ")).collect(Collectors.toList()))
+                .moviePosterId(moviePoster.getId())
+                .saleRate(saleRate).build();
+    }
 }

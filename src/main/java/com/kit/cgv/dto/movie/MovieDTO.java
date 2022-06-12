@@ -1,11 +1,10 @@
 package com.kit.cgv.dto.movie;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.kit.cgv.dto.poster.PosterDTO;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
+import java.util.LinkedList;
 import java.util.List;
 
 @Data
@@ -13,8 +12,14 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MovieDTO {
     private Long movieId;
-    private String name;
-    private List<PosterDTO> poster;
-    private String genre;
-    private String rate;
+    private String title;
+    private Long runtime;
+    private String openingDate;
+    private Double evaluationRate;
+    private String description;
+    private List<String> directors = new LinkedList<>();
+    private List<String> actors = new LinkedList<>();
+    private Double saleRate;
+    private Long moviePosterId;
+    private List<String> genre = new LinkedList<>();
 }

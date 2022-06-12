@@ -21,6 +21,11 @@ public class ScreenDetailController {
         return ResponseEntity.status(HttpStatus.OK).body(screenDetailService.getLists());
     }
 
+    @GetMapping("/screen/{movieId}")
+    public ResponseEntity getListWithMovie(@PathVariable Long movieId){
+        return ResponseEntity.status(HttpStatus.OK).body(screenDetailService.getListWithMovieId(movieId));
+    }
+
     @PostMapping("/{managerId}/fixedrate")
     public ResponseEntity fixedRateUpdate(@RequestBody ScreenDetailUpdateDTO dto){
         return screenDetailService.updateScreenDetailWithFixedRate(dto);

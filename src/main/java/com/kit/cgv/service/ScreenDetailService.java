@@ -11,6 +11,7 @@ public interface ScreenDetailService {
 
     List<ScreenDetailDTO> getLists();
 
+    List<ScreenDetailDTO> getListWithMovieId(Long movieId);
     ResponseEntity updateScreenDetailWithFixedRate(ScreenDetailUpdateDTO dto);
 
     ResponseEntity updateScreenDetailWithDiscount(ScreenDetailUpdateDTO dto);

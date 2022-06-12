@@ -24,18 +24,24 @@ public class ScreenDetailServiceImpl implements ScreenDetailService {
     private final ScreenDetailRepository screenDetailRepository;
 
     @Override
+    public List<ScreenDetailDTO> getListWithMovieId(Long movieId) {
+        List<ScreenDetail> screenDetails = screenDetailRepository.findWithMovieId(movieId);
+        return screenDetails.stream().map(screenDetail -> ScreenDetailDTO.builder()
+                .screen_detail_id(screenDetail.getScreenDetailID())
+                .movie_id(screenDetail.getScreen().getMovie().getMovieId())
+                .seat(screenDetail.getSeat())
+                .time(String.format("%02d:%02d",screenDetail.getScreenTime().getHour(), screenDetail.getScreenTime().getMinute())).build()).collect(Collectors.toList());
+    }
+
+    @Override
     public List<ScreenDetailDTO> getLists() {
         List<ScreenDetail> screenDetails = screenDetailRepository.findAll();
 
-        List<ScreenDetailDTO> screenDetailDTOs = screenDetails.stream().map(screenDetail -> {
-            return ScreenDetailDTO.builder()
-                    .screen_detail_id(screenDetail.getScreenDetailID())
-                    .movie_id(screenDetail.getScreen().getMovie().getMovieId())
-                    .seat(screenDetail.getSeat())
-                    .time(String.format("%02d:%02d",screenDetail.getScreenTime().getHour(), screenDetail.getScreenTime().getMinute())).build();
-        }).collect(Collectors.toList());
-
-        return screenDetailDTOs;
+        return screenDetails.stream().map(screenDetail -> ScreenDetailDTO.builder()
+                .screen_detail_id(screenDetail.getScreenDetailID())
+                .movie_id(screenDetail.getScreen().getMovie().getMovieId())
+                .seat(screenDetail.getSeat())
+                .time(String.format("%02d:%02d",screenDetail.getScreenTime().getHour(), screenDetail.getScreenTime().getMinute())).build()).collect(Collectors.toList());
     }
 
     @Override
