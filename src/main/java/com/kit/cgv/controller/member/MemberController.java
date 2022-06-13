@@ -1,7 +1,7 @@
 package com.kit.cgv.controller.member;
 
-import com.kit.cgv.dto.member.MemberSignUpDTO;
 import com.kit.cgv.dto.member.MemberLoginDTO;
+import com.kit.cgv.dto.member.MemberSignUpDTO;
 import com.kit.cgv.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

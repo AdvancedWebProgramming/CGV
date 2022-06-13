@@ -83,8 +83,8 @@ public class Movie extends BaseTimeEntity {
                 .openingDate(String.format("%d.%d.%d", openingDate.getYear(), openingDate.getMonthValue(), openingDate.getDayOfMonth()))
                 .runtime(runtime)
                 .title(title)
-                .genre(Arrays.stream(genre.split(", ")).collect(Collectors.toList()))
-                .moviePosterId(moviePoster.getId())
+                .genres(Arrays.stream(genre.split(", ")).collect(Collectors.toList()))
+                .moviePosterURL(moviePoster.toPath())
                 .saleRate(saleRate).build();
     }
 }

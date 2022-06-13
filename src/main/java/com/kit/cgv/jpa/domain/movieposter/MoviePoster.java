@@ -38,4 +38,8 @@ public class MoviePoster extends BaseTimeEntity {
                 .id(id)
                 .path("http://kitcapstone.iptime.org:8080/static/images/"+fileName).build();
     }
+
+    public String toPath(){
+        return "http://kitcapstone.iptime.org:8080/static/images/"+fileName;
+    }
 }

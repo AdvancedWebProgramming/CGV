@@ -90,7 +90,7 @@ public class DummyDataLoader implements ApplicationListener<ContextRefreshedEven
                 "그의 명성을 모르던 팀원들은 매버릭의 지시를 무시하지만 실전을 방불케 하는 상공 훈련에서 눈으로 봐도 믿기 힘든 전설적인 조종 실력에 모두가 압도된다. \n" +
                 "\n" +
                 "매버릭의 지휘아래 견고한 팀워크를 쌓아가던 팀원들에게 국경을 뛰어넘는 위험한 임무가 주어지자\n" +
-                "매버릭은 자신이 가르친 동료들과 함께 마지막이 될 지 모를 하늘 위 비행에 나서는데… ","조셉 코신스키", "액션","12세 이상", "탑건-매버릭", 130L);
+                "매버릭은 자신이 가르친 동료들과 함께 마지막이 될 지 모를 하늘 위 비행에 나서는데… ","조셉 코신스키", "액션","12세 이상", "탑건-매버릭", 130L, 13.5, 97.0);
         createMovieIfNotFound(2L, "신시아, 박은빈, 서은수, 진구, 성유빈, 조민수, 이종석, 김다미", LocalDate.of(2022,8,16), LocalDate.of(2022,6,12), "통제불능의 존재가 세상 밖으로 나왔다!\n" +
                 " \n" +
                 "‘자윤’이 사라진 뒤, 정체불명의 집단의 무차별 습격으로 마녀 프로젝트가 진행되고 있는 ‘아크’가 초토화된다.\n" +
@@ -103,7 +103,7 @@ public class DummyDataLoader implements ApplicationListener<ContextRefreshedEven
                 "각기 다른 목적을 지닌 세력이 하나 둘 모여들기 시작하면서 ‘소녀’ 안에 숨겨진 본성이 깨어나는데…\n" +
                 " \n" +
                 "모든 것의 시작,\n" +
-                "더욱 거대하고 강력해진 마녀가 온다.", "박훈정", "액션","15세 이상","마녀(魔女) Part2. The Other One", 137L);
+                "더욱 거대하고 강력해진 마녀가 온다.", "박훈정", "액션","15세 이상","마녀(魔女) Part2. The Other One", 137L, 12.1, 98.0);
         createMovieIfNotFound(3L, "크리스 애반스, 타이카 와이티티, 피터 손", LocalDate.of(2022,8,16), LocalDate.of(2022,6,12), "우주 저 너머 운명을 건 미션, 무한한 모험이 시작된다!\n" +
                 "\n" +
                 "미션 #1\n" +
@@ -122,7 +122,7 @@ public class DummyDataLoader implements ApplicationListener<ContextRefreshedEven
                 "어쩌다 한 팀이 된 정예 부대와 이 미션을 수행할 예정이다.\n" +
                 "우주를 집어삼킬 ‘저그’와 대규모 로봇 군사의 위협이 계속되지만\n" +
                 "나는 절대 포기할 수 없다.\n" +
-                "그런데… 여긴 또 어디지? 시간 속에 갇힌 건가?", "앤거슨 맥클레인","애니메이션","전체","버즈 라이트이어", 105L);
+                "그런데… 여긴 또 어디지? 시간 속에 갇힌 건가?", "앤거슨 맥클레인","애니메이션","전체","버즈 라이트이어", 105L, 10.3, 97.3);
 
         createMovieIfNotFound(4L,"마동석, 손석구, 최귀화, 박지환, 허동원, 하준, 정재광", LocalDate.of(2022,8,16), LocalDate.of(2022,5,18),"“느낌 오지? 이 놈 잡아야 하는 거”\n" +
                 "\n" +
@@ -136,7 +136,7 @@ public class DummyDataLoader implements ApplicationListener<ContextRefreshedEven
                 " 역대급 범죄를 저지르는 ‘강해상’을 본격적으로 쫓기 시작하는데...\n" +
                 "\n" +
                 "나쁜 놈들 잡는 데 국경 없다!\n" +
-                "통쾌하고 화끈한 범죄 소탕 작전이 다시 펼쳐진다! ", "이상용", "범죄, 액션", "15세 이상", "범죄도시 2", 106L);
+                "통쾌하고 화끈한 범죄 소탕 작전이 다시 펼쳐진다! ", "이상용", "범죄, 액션", "15세 이상", "범죄도시 2", 106L, 9.6, 96.5);
         createMovieIfNotFound(5L, "송강호, 강동원, 배두나, 이지은, 이주영", LocalDate.of(2022,8,16), LocalDate.of(2022,6,8), "세탁소를 운영하지만 늘 빚에 시달리는 ‘상현’(송강호)과\n" +
                 "베이비 박스 시설에서 일하는 보육원 출신의 ‘동수’(강동원).\n" +
                 "거센 비가 내리는 어느 날 밤,\n" +
@@ -151,18 +151,18 @@ public class DummyDataLoader implements ApplicationListener<ContextRefreshedEven
                 "\n" +
                 "베이비 박스,\n" +
                 "그곳에서 의도치 않게 만난 이들의\n" +
-                "예기치 못한 특별한 여정이 시작된다.", "고레에다 히로카즈", "드라마", "12세 이상", "브로커", 129L);
+                "예기치 못한 특별한 여정이 시작된다.", "고레에다 히로카즈", "드라마", "12세 이상", "브로커", 129L, 9.3, 99.3);
 
-        createMovieIfNotFound(6L, "크리스 프랫, 브라이스 달라스 하워드, 드완다 와이즈, 로라 던, 제프 골드브럼, 샘 닐", LocalDate.of(2022,8,16), LocalDate.of(2022,6,1), "", "콜린 트레보로우", "액션, 어드벤쳐", "12세 이상", "쥬라기 월드-도미니언", 147L);
+        createMovieIfNotFound(6L, "크리스 프랫, 브라이스 달라스 하워드, 드완다 와이즈, 로라 던, 제프 골드브럼, 샘 닐", LocalDate.of(2022,8,16), LocalDate.of(2022,6,1), "", "콜린 트레보로우", "액션, 어드벤쳐", "12세 이상", "쥬라기 월드-도미니언", 147L, 8.8, 93.0);
         createMovieIfNotFound(7L, "콜린 파렐, 조디 터너 스미스, 저스틴 H.민, 말레아 엠마 찬드로위자야", LocalDate.of(2022,8,16), LocalDate.of(2022,6,1), "함께 살던 안드로이드 인간 ‘양’이 어느 날 작동을 멈추자\n" +
                 "제이크 가족은 그를 수리할 방법을 찾는다.\n" +
                 "그러던 중, ‘양’에게서 특별한 메모리 뱅크를 발견하고\n" +
                 "그의 기억을 탐험하기 시작하는데…\n" +
                 "\n" +
-                "무엇을 남기고 싶었어, 양?", "코고나다", "드라마", "전체", "애프터 양",96L);
+                "무엇을 남기고 싶었어, 양?", "코고나다", "드라마", "전체", "애프터 양",96L, 8.9, 89.7);
         createMovieIfNotFound(8L, "이선호, 김영선", LocalDate.of(2022,8,16), LocalDate.of(2022,6,1), "끝나지 않은 전설의 포켓몬들의 배틀로\n" +
                 "위험에 빠진 반전 세계와 현실 세계를 구하기 위해\n" +
-                "감사포켓몬 ‘쉐이미’와 ‘지우’, ‘피카츄’가 나서면서 시작되는 모험 이야기", "유야마 쿠니히코", "애니메이션", "전체", "극장판 포켓몬스터DP-기라티나와 하늘의 꽃다발 쉐이미",96L);
+                "감사포켓몬 ‘쉐이미’와 ‘지우’, ‘피카츄’가 나서면서 시작되는 모험 이야기", "유야마 쿠니히코", "애니메이션", "전체", "극장판 포켓몬스터DP-기라티나와 하늘의 꽃다발 쉐이미",96L, 7.3, 88.9);
         createMovieIfNotFound(9L, "송강호, 김옥빈", LocalDate.of(2022,8,16), LocalDate.of(2017,7,27), "뱀파이어가 된 신부, 친구의 아내를 탐하다\n" +
                 "\n" +
                 "병원에서 근무하는 신부 ‘상현’은 죽어가는 환자들을 보고만 있어야 하는 자신의 무기력함에 괴로워 하다가 해외에서 비밀리에 진행되는 백신개발 실험에 자발적으로 참여한다. 그러나 실험 도중 바이러스 감염으로 죽음에 이르고, 정체불명의 피를 수혈 받아 기적적으로 소생한다. 하지만 그 피는 상현을 뱀파이어로 만들어버렸다. 피를 원하는 육체적 욕구와 살인을 원치 않는 신앙심의 충돌은 상현을 짓누르지만 피를 먹지 않고 그는 살 수가 없다. 하지만 살인하지 않고 사람의 피를 어떻게 구한단 말인가?\n" +
@@ -171,7 +171,7 @@ public class DummyDataLoader implements ApplicationListener<ContextRefreshedEven
                 "\n" +
                 " \n" +
                 "\n" +
-                "* CGV용산아이파크몰 아트하우스 박찬욱관 오픈 기념으로 리마스터링된 작품이며 확장판으로 상영됩니다.", "반찬욱", "호러, 드라마", "미정", "박쥐 확장판", 147L);
+                "* CGV용산아이파크몰 아트하우스 박찬욱관 오픈 기념으로 리마스터링된 작품이며 확장판으로 상영됩니다.", "반찬욱", "호러, 드라마", "미정", "박쥐 확장판", 147L, 5.4, 87.3);
         createMovieIfNotFound(10L, "김민희, 김태리, 하정우, 조진웅, 김해숙, 문소리", LocalDate.of(2022,8,16), LocalDate.of(2016,9,1), "어릴 적 부모를 잃고 후견인 이모부(조진웅)의 엄격한 보호 아래 살아가는 귀족 아가씨(김민희).\n" +
                 "그녀에게 백작이 추천한 새로운 하녀가 찾아온다.\n" +
                 "\n" +
@@ -193,13 +193,13 @@ public class DummyDataLoader implements ApplicationListener<ContextRefreshedEven
                 "\n" +
                 "돈과 마음을 뺏기 위해 서로 속고 속이는\n" +
                 "\n" +
-                "매혹적인 그들의 이야기가 시작된다!", "박찬욱", "드라마, 스릴러", "청소년 관람불가", "아가씨 확장판", 167L);
+                "매혹적인 그들의 이야기가 시작된다!", "박찬욱", "드라마, 스릴러", "청소년 관람불가", "아가씨 확장판", 167L, 3.3, 77.5);
         createMovieIfNotFound(11L, "베네딕트 컴버배치, 엘리자베스 올슨, 베네딕트 웡, 레이첼 맥아담스, 치웨텔 에지오포, 소치를 고메즈", LocalDate.of(2022,8,16), LocalDate.of(2022,5,4), "지금껏 본 적 없는 마블의 극한 상상력!\n" +
                 "5월, 광기의 멀티버스가 깨어난다!\n" +
                 "  \n" +
                 "끝없이 균열되는 차원과 뒤엉킨 시공간의 멀티버스가 열리며\n" +
                 "오랜 동료들, 그리고 차원을 넘어 들어온 새로운 존재들을 맞닥뜨리게 된 ‘닥터 스트레인지’.\n" +
-                "대혼돈 속, 그는 예상치 못한 극한의 적과 맞서 싸워야만 하는데….", "샘 레이미", "액션, 어드벤처, 환타지", "12세 이상", "닥터 스트레인지-대혼돈의 멀티버스", 126L);
+                "대혼돈 속, 그는 예상치 못한 극한의 적과 맞서 싸워야만 하는데….", "샘 레이미", "액션, 어드벤처, 환타지", "12세 이상", "닥터 스트레인지-대혼돈의 멀티버스", 126L, 2.1, 99.3);
     }
 
     private MoviePoster createMoviePosterIfNotFound(Long moviePosterId, Long movieId, String fileName){
@@ -214,12 +214,17 @@ public class DummyDataLoader implements ApplicationListener<ContextRefreshedEven
             return null;
         }
 
-        return moviePosterRepository.save(MoviePoster.builder()
+        MoviePoster moviePoster =  moviePosterRepository.save(MoviePoster.builder()
                 .id(moviePosterId)
                 .movie(findMovie.get())
                 .path("C:\\Users\\khj74\\IdeaProjects\\CGV\\src\\main\\resources\\public\\static\\images\\"+fileName)
                 .fileName(fileName)
                 .build());
+
+        findMovie.get().setMoviePoster(moviePoster);
+        movieRepository.save(findMovie.get());
+
+        return moviePoster;
     }
 
     private Member createMemberIfNotFound(Long memberId, String memberLoginId, String memberPWD, String name, LocalDate birthday){
@@ -237,7 +242,7 @@ public class DummyDataLoader implements ApplicationListener<ContextRefreshedEven
                 .build());
     }
 
-    private Movie createMovieIfNotFound(Long movieId, String actor, LocalDate closingDate, LocalDate openingDate, String description, String director, String genre, String rate, String title, Long runTime){
+    private Movie createMovieIfNotFound(Long movieId, String actor, LocalDate closingDate, LocalDate openingDate, String description, String director, String genre, String rate, String title, Long runTime, Double saleRate, Double evaluationRate){
         Optional<Movie> findMovie = movieRepository.findById(movieId);
 
         if(findMovie.isPresent()){
@@ -256,6 +261,8 @@ public class DummyDataLoader implements ApplicationListener<ContextRefreshedEven
                         .openingDate(openingDate)
                         .watcherCount(0L)
                         .runtime(runTime)
+                        .saleRate(saleRate)
+                        .evaluationRate(evaluationRate)
                         .title(title).build()
         );
     }

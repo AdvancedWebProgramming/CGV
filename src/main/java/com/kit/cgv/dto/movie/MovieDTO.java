@@ -20,6 +20,6 @@ public class MovieDTO {
     private List<String> directors = new LinkedList<>();
     private List<String> actors = new LinkedList<>();
     private Double saleRate;
-    private Long moviePosterId;
-    private List<String> genre = new LinkedList<>();
+    private String moviePosterURL;
+    private List<String> genres = new LinkedList<>();
 }
